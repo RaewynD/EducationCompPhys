@@ -1,3 +1,8 @@
+# air_resistance.py
+
+# original code by Byron Philhour
+# modified by Raewyn Duvall & John C. Merfeld
+
 from __future__ import division # import decimal division
 from visual import *            # import standard visual python
 from visual.graph import *      # import graphing features
@@ -40,7 +45,7 @@ while t < t_end:
 
     #update kinematics
     ball.velocity = ball.velocity + ball.accel*deltat # delta-v = a * delta-t
-    ball.ps = ball.ps + ball.velocity*deltat          # delta-x = a * delta-a
+    ball.pos = ball.pos + ball.velocity*deltat        # delta-x = a * delta-a
 
     #check for collision with the ground
     if ball.pos.y - ball.radius < ground.pos.y:
