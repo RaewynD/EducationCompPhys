@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     31568,        769]
-NotebookOptionsPosition[     30395,        723]
-NotebookOutlinePosition[     30754,        739]
-CellTagsIndexPosition[     30711,        736]
+NotebookDataLength[     31797,        766]
+NotebookOptionsPosition[     30592,        719]
+NotebookOutlinePosition[     30948,        735]
+CellTagsIndexPosition[     30905,        732]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,9 +29,10 @@ Cell["By Jennifer Radoff", "Text",
 
 Cell[CellGroupData[{
 
-Cell[TextData[StyleBox["Setting up initial conditions", "Section"]], \
+Cell[TextData[StyleBox["How does air resistance work?", "Section"]], \
 "Subsection",
- CellChangeTimes->{{3.637925573958766*^9, 3.637925581067484*^9}}],
+ CellChangeTimes->{{3.637925625370536*^9, 3.6379256299818163`*^9}, {
+  3.637940887219048*^9, 3.6379408972092047`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -41,26 +42,7 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"v0y", "=", 
    RowBox[{"v0", " ", 
-    RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"y", "=", 
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      RowBox[{"-", "1"}], "/", "2"}], " ", "g", " ", 
-     SuperscriptBox["t", "2"]}], "+", 
-    RowBox[{"v0y", " ", "t"}]}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"x", "=", 
-   RowBox[{"v0x", " ", "t"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"vx", "=", 
-   RowBox[{"D", "[", 
-    RowBox[{"x", ",", "t"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"vy", "=", 
-   RowBox[{"D", "[", 
-    RowBox[{"y", ",", "t"}], "]"}]}], ";"}]}], "Input",
+    RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.630877057839093*^9, 3.630877101682373*^9}, {
   3.630877133919194*^9, 3.630877179865209*^9}, {3.6308772580311623`*^9, 
   3.6308773010518703`*^9}, {3.630877366300571*^9, 3.630877386503542*^9}, {
@@ -70,11 +52,8 @@ Cell[BoxData[{
   3.630882761223105*^9}, {3.63088282143925*^9, 3.6308828511540833`*^9}, {
   3.6308832219922543`*^9, 3.630883243599125*^9}, {3.630883345625105*^9, 
   3.630883349026376*^9}, {3.630886336508402*^9, 3.630886341919302*^9}, {
-  3.637937663786371*^9, 3.637937664575472*^9}}],
-
-Cell[BoxData[
- RowBox[{"Clear", "[", "g", "]"}]], "Input",
- CellChangeTimes->{{3.637937666522086*^9, 3.637937672627*^9}}],
+  3.637937663786371*^9, 3.637937664575472*^9}, {3.63794017935961*^9, 
+  3.6379401841741657`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -159,15 +138,17 @@ Cell[BoxData[
    3.637936859753113*^9}, {3.637936897136215*^9, 3.6379369204125853`*^9}, {
    3.637937597102036*^9, 3.6379376005591717`*^9}, 3.637938450968377*^9, 
    3.637938660886298*^9}]
-}, Closed]],
-
-Cell[TextData[StyleBox["Manipulate", "Section"]], "Subsection",
- CellChangeTimes->{{3.637925625370536*^9, 3.6379256299818163`*^9}}],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Position simulation", "Subsection",
  CellChangeTimes->{{3.637939226801126*^9, 3.6379392314575167`*^9}}],
+
+Cell["\<\
+For the case of dropping, initial speed should be set to zero.\
+\>", "Text",
+ CellChangeTimes->{3.6379405995468884`*^9}],
 
 Cell[CellGroupData[{
 
@@ -237,7 +218,7 @@ Cell[BoxData[
          RowBox[{"0", ",", "200"}], "}"}], ",", 
         RowBox[{"{", 
          RowBox[{
-          RowBox[{"-", "50"}], ",", "100"}], "}"}]}], "}"}]}], ",", 
+          RowBox[{"-", "100"}], ",", "100"}], "}"}]}], "}"}]}], ",", 
      "\[IndentingNewLine]", 
      RowBox[{"ImageSize", "\[Rule]", "300"}], ",", "\[IndentingNewLine]", 
      RowBox[{"PlotLegends", "\[Rule]", 
@@ -290,8 +271,8 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"v0", ",", "35", ",", "\"\<initial velocity\>\""}], "}"}], ",", 
-     "10", ",", "45"}], "}"}], ",", 
+      RowBox[{"v0", ",", "35", ",", "\"\<initial speed\>\""}], "}"}], ",", 
+     "0", ",", "45"}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
@@ -323,41 +304,44 @@ Cell[BoxData[
   3.637937784746901*^9, 3.637937793385106*^9}, {3.637937907056788*^9, 
   3.637937916236945*^9}, {3.637938610264114*^9, 3.637938610486175*^9}, {
   3.637939002978826*^9, 3.637939064625434*^9}, {3.6379390963960657`*^9, 
-  3.637939133254118*^9}}],
+  3.637939133254118*^9}, {3.63794001952176*^9, 3.637940021902767*^9}, {
+  3.637940131028454*^9, 3.6379401318143473`*^9}, {3.637940256307431*^9, 
+  3.6379402775902853`*^9}, {3.637940310036289*^9, 3.637940326865224*^9}, {
+  3.637940358772128*^9, 3.637940362281698*^9}}],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`b$$ = 0.3, $CellContext`g$$ = 
-    9.8, $CellContext`m$$ = 0.5, $CellContext`tf$$ = 4.46, $CellContext`v0$$ =
-     35, $CellContext`\[Theta]$$ = 1.09, Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`v0$$], 35, "initial velocity"}, 10, 45}, {{
+    9.8, $CellContext`m$$ = 0.5, $CellContext`tf$$ = 8.1, $CellContext`v0$$ = 
+    31.200000000000003`, $CellContext`\[Theta]$$ = 1.1295574287564276`, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`v0$$], 35, "initial speed"}, 0, 45}, {{
        Hold[$CellContext`b$$], 0.3, "drag coefficient"}, 0.001, 0.5}, {{
        Hold[$CellContext`m$$], 0.5, "mass"}, 0.01, 2}, {{
        Hold[$CellContext`\[Theta]$$], 1.09, "angle"}, 0.1, Rational[1, 2] 
       Pi}, {{
        Hold[$CellContext`g$$], 9.8, "gravity"}, 5, 20}, {{
        Hold[$CellContext`tf$$], 0.1, "time"}, 0.1, 10}}, Typeset`size$$ = {
-    442., {108., 112.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True, $CellContext`v0$171154$$ = 
-    0, $CellContext`b$171155$$ = 0, $CellContext`m$171156$$ = 
-    0, $CellContext`\[Theta]$171157$$ = 0, $CellContext`g$171158$$ = 
-    0, $CellContext`tf$171159$$ = 0}, 
+    442., {141., 146.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`v0$191223$$ = 
+    0, $CellContext`b$191224$$ = 0, $CellContext`m$191225$$ = 
+    0, $CellContext`\[Theta]$191226$$ = 0, $CellContext`g$191227$$ = 
+    0, $CellContext`tf$191228$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`b$$ = 0.3, $CellContext`g$$ = 
         9.8, $CellContext`m$$ = 0.5, $CellContext`tf$$ = 
         0.1, $CellContext`v0$$ = 35, $CellContext`\[Theta]$$ = 1.09}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`v0$$, $CellContext`v0$171154$$, 0], 
-        Hold[$CellContext`b$$, $CellContext`b$171155$$, 0], 
-        Hold[$CellContext`m$$, $CellContext`m$171156$$, 0], 
-        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$171157$$, 0], 
-        Hold[$CellContext`g$$, $CellContext`g$171158$$, 0], 
-        Hold[$CellContext`tf$$, $CellContext`tf$171159$$, 0]}, 
+        Hold[$CellContext`v0$$, $CellContext`v0$191223$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$191224$$, 0], 
+        Hold[$CellContext`m$$, $CellContext`m$191225$$, 0], 
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$191226$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$191227$$, 0], 
+        Hold[$CellContext`tf$$, $CellContext`tf$191228$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -375,7 +359,7 @@ $CellContext`b$$ $CellContext`v0$$ Sin[$CellContext`\[Theta]$$] -
              Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2}}, \
 {$CellContext`t, 0, $CellContext`tf$$}, 
         PlotStyle -> {{Thick, Blue}, {Thick, Red}}, AxesOrigin -> {0, 0}, 
-        AxesLabel -> {"x", "y"}, PlotRange -> {{0, 200}, {-50, 100}}, 
+        AxesLabel -> {"x", "y"}, PlotRange -> {{0, 200}, {-100, 100}}, 
         ImageSize -> 300, 
         PlotLegends -> {"no air resistance", "air resistance"}, 
         Epilog -> {Green, 
@@ -392,14 +376,14 @@ $CellContext`b$$ $CellContext`v0$$ Sin[$CellContext`\[Theta]$$] -
               E^(-($CellContext`b$$ $CellContext`tf$$/$CellContext`m$$)) \
 ($CellContext`g$$ $CellContext`m$$ + $CellContext`b$$ $CellContext`v0$$ 
                 Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2}}]}], 
-      "Specifications" :> {{{$CellContext`v0$$, 35, "initial velocity"}, 10, 
+      "Specifications" :> {{{$CellContext`v0$$, 35, "initial speed"}, 0, 
          45}, {{$CellContext`b$$, 0.3, "drag coefficient"}, 0.001, 
          0.5}, {{$CellContext`m$$, 0.5, "mass"}, 0.01, 
          2}, {{$CellContext`\[Theta]$$, 1.09, "angle"}, 0.1, Rational[1, 2] 
          Pi}, {{$CellContext`g$$, 9.8, "gravity"}, 5, 
          20}, {{$CellContext`tf$$, 0.1, "time"}, 0.1, 10}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{487., {222., 227.}},
+     ImageSizeCache->{487., {269., 274.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -413,13 +397,21 @@ $CellContext`b$$ $CellContext`v0$$ Sin[$CellContext`\[Theta]$$] -
  CellChangeTimes->{
   3.637937730628098*^9, 3.637937813301683*^9, {3.6379379085665007`*^9, 
    3.6379379165315037`*^9}, 3.63793861081736*^9, {3.637939050348748*^9, 
-   3.6379390659145517`*^9}, {3.6379391266254168`*^9, 3.637939133825962*^9}}]
+   3.6379390659145517`*^9}, {3.6379391266254168`*^9, 3.637939133825962*^9}, 
+   3.637940023164048*^9, 3.637940278242536*^9, {3.637940330292753*^9, 
+   3.637940362870864*^9}}]
 }, {2}]],
 
 Cell[CellGroupData[{
 
 Cell[TextData[StyleBox["Velocity vs. time", "Subsection"]], "Subsubsection",
  CellChangeTimes->{{3.637939242302205*^9, 3.637939246015012*^9}}],
+
+Cell["\<\
+For the case of dropping, initial speed should be set to zero.\
+\>", "Text",
+ CellChangeTimes->{{3.637940441139132*^9, 3.637940468587604*^9}, {
+  3.6379405507356243`*^9, 3.637940552849231*^9}}],
 
 Cell[CellGroupData[{
 
@@ -489,8 +481,8 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"v0", ",", "35", ",", "\"\<initial velocity\>\""}], "}"}], ",", 
-     "10", ",", "45"}], "}"}], ",", 
+      RowBox[{"v0", ",", "35", ",", "\"\<initial speed\>\""}], "}"}], ",", 
+     "0", ",", "45"}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
@@ -514,42 +506,43 @@ Cell[BoxData[
       RowBox[{"g", ",", "9.8", ",", "\"\<gravity\>\""}], "}"}], ",", "5", ",",
       "20"}], "}"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.6379371023982897`*^9, 3.637937263265749*^9}, {
-  3.637937304714265*^9, 3.637937340328081*^9}, {3.637937424028329*^9, 
-  3.637937465878731*^9}, {3.637937945669495*^9, 3.6379379870411654`*^9}, {
-  3.63793806243998*^9, 3.637938065496809*^9}, {3.637938152149598*^9, 
-  3.637938209360614*^9}, {3.6379382598094797`*^9, 3.637938286827415*^9}, {
-  3.637938566662814*^9, 3.637938577300537*^9}, {3.637939082965372*^9, 
-  3.637939085596202*^9}}],
+   3.637937304714265*^9, 3.637937340328081*^9}, {3.637937424028329*^9, 
+   3.637937465878731*^9}, {3.637937945669495*^9, 3.6379379870411654`*^9}, {
+   3.63793806243998*^9, 3.637938065496809*^9}, {3.637938152149598*^9, 
+   3.637938209360614*^9}, {3.6379382598094797`*^9, 3.637938286827415*^9}, {
+   3.637938566662814*^9, 3.637938577300537*^9}, {3.637939082965372*^9, 
+   3.637939085596202*^9}, {3.637940473251028*^9, 3.637940476780327*^9}, 
+   3.637940532246323*^9}],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`b$$ = 0.3, $CellContext`g$$ = 
     9.8, $CellContext`m$$ = 0.5, $CellContext`v0$$ = 
-    35, $CellContext`\[Theta]$$ = 1.09, Typeset`show$$ = True, 
+    0., $CellContext`\[Theta]$$ = 0.1, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`v0$$], 35, "initial velocity"}, 10, 45}, {{
+       Hold[$CellContext`v0$$], 35, "initial speed"}, 0, 45}, {{
        Hold[$CellContext`b$$], 0.3, "drag coefficient"}, 0.001, 0.5}, {{
        Hold[$CellContext`m$$], 0.5, "mass"}, 0.01, 2}, {{
        Hold[$CellContext`\[Theta]$$], 1.09, "angle"}, 0.1, Rational[1, 2] 
       Pi}, {{
        Hold[$CellContext`g$$], 9.8, "gravity"}, 5, 20}}, Typeset`size$$ = {
     380., {214., 218.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True, $CellContext`v0$169992$$ = 
-    0, $CellContext`b$169993$$ = 0, $CellContext`m$169994$$ = 
-    0, $CellContext`\[Theta]$169995$$ = 0, $CellContext`g$169996$$ = 0}, 
+    Typeset`skipInitDone$$ = True, $CellContext`v0$196151$$ = 
+    0, $CellContext`b$196152$$ = 0, $CellContext`m$196153$$ = 
+    0, $CellContext`\[Theta]$196154$$ = 0, $CellContext`g$196155$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`b$$ = 0.3, $CellContext`g$$ = 
         9.8, $CellContext`m$$ = 0.5, $CellContext`v0$$ = 
         35, $CellContext`\[Theta]$$ = 1.09}, "ControllerVariables" :> {
-        Hold[$CellContext`v0$$, $CellContext`v0$169992$$, 0], 
-        Hold[$CellContext`b$$, $CellContext`b$169993$$, 0], 
-        Hold[$CellContext`m$$, $CellContext`m$169994$$, 0], 
-        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$169995$$, 0], 
-        Hold[$CellContext`g$$, $CellContext`g$169996$$, 0]}, 
+        Hold[$CellContext`v0$$, $CellContext`v0$196151$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$196152$$, 0], 
+        Hold[$CellContext`m$$, $CellContext`m$196153$$, 0], 
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$196154$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$196155$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -557,7 +550,6 @@ Cell[BoxData[
          Typeset`skipInitDone$$}, "Body" :> 
       ParametricPlot[{{$CellContext`t, (-$CellContext`g$$) $CellContext`t + \
 $CellContext`v0$$ 
-           
            Sin[$CellContext`\[Theta]$$]}, {$CellContext`t, \
 ((-$CellContext`g$$) $CellContext`m$$ + 
            E^(-($CellContext`b$$ $CellContext`t/$CellContext`m$$)) \
@@ -567,7 +559,7 @@ $CellContext`v0$$
         AxesOrigin -> {0, 0}, AxesLabel -> {"t", "vy"}, 
         PlotRange -> {{0, 10}, {-50, 45}}, AspectRatio -> 2/1, 
         PlotLegends -> {"no air resistance", "air resistance"}], 
-      "Specifications" :> {{{$CellContext`v0$$, 35, "initial velocity"}, 10, 
+      "Specifications" :> {{{$CellContext`v0$$, 35, "initial speed"}, 0, 
          45}, {{$CellContext`b$$, 0.3, "drag coefficient"}, 0.001, 
          0.5}, {{$CellContext`m$$, 0.5, "mass"}, 0.01, 
          2}, {{$CellContext`\[Theta]$$, 1.09, "angle"}, 0.1, Rational[1, 2] 
@@ -588,7 +580,8 @@ $CellContext`v0$$
    3.637937438897192*^9, 3.637937466619829*^9}, {3.6379379490309753`*^9, 
    3.637937988010705*^9}, 3.637938066249773*^9, {3.637938153309999*^9, 
    3.637938209889503*^9}, {3.637938266227984*^9, 3.637938287219329*^9}, {
-   3.6379385673716393`*^9, 3.637938580151195*^9}, 3.637939088396926*^9}]
+   3.6379385673716393`*^9, 3.637938580151195*^9}, 3.637939088396926*^9, 
+   3.637940477828671*^9, 3.637940532774375*^9}]
 }, {2}]]
 }, Open  ]]
 }, Open  ]],
@@ -718,11 +711,14 @@ Cell[BoxData[
   3.637938764451251*^9, 3.6379388174762373`*^9, {3.637938861103488*^9, 
    3.637938887461499*^9}, 3.637939103302445*^9}]
 }, {2}]]
-}, Open  ]]
+}, Open  ]],
+
+Cell["Experimenting with air resistance", "Section",
+ CellChangeTimes->{{3.637940923512371*^9, 3.63794092789876*^9}}]
 }, Open  ]]
 },
-WindowSize->{1415, 834},
-WindowMargins->{{1356, Automatic}, {Automatic, 0}},
+WindowSize->{1280, 751},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
 2014)",
 StyleDefinitions->"Default.nb"
@@ -742,34 +738,35 @@ Cell[CellGroupData[{
 Cell[580, 22, 157, 2, 92, "Title"],
 Cell[740, 26, 100, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[865, 31, 150, 2, 53, "Subsection"],
-Cell[1018, 35, 1536, 37, 116, "Input"],
-Cell[2557, 74, 121, 2, 28, "Input"],
-Cell[2681, 78, 2840, 50, 28, "Input"],
-Cell[5524, 130, 1187, 30, 28, "Input"]
-}, Closed]],
-Cell[6726, 163, 131, 1, 45, "Subsection"],
+Cell[865, 31, 203, 3, 53, "Subsection"],
+Cell[1071, 36, 1017, 19, 46, "Input"],
+Cell[2091, 57, 2840, 50, 28, "Input"],
+Cell[4934, 109, 1187, 30, 28, "Input"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[6882, 168, 109, 1, 36, "Subsection"],
+Cell[6158, 144, 109, 1, 44, "Subsection"],
+Cell[6270, 147, 130, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[7016, 173, 5733, 152, 338, "Input"],
-Cell[12752, 327, 4967, 88, 500, "Output"]
+Cell[6425, 154, 5972, 155, 338, "Input"],
+Cell[12400, 311, 5089, 90, 560, "Output"]
 }, {2}]],
 Cell[CellGroupData[{
-Cell[17753, 420, 142, 1, 36, "Subsubsection"],
+Cell[17523, 406, 142, 1, 36, "Subsubsection"],
+Cell[17668, 409, 203, 4, 30, "Text"],
 Cell[CellGroupData[{
-Cell[17920, 425, 3516, 96, 249, "Input"],
-Cell[21439, 523, 3754, 67, 650, "Output"]
+Cell[17896, 417, 3590, 97, 249, "Input"],
+Cell[21489, 516, 3781, 67, 650, "Output"]
 }, {2}]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25251, 597, 111, 1, 44, "Subsection"],
+Cell[25328, 590, 111, 1, 44, "Subsection"],
 Cell[CellGroupData[{
-Cell[25387, 602, 2348, 65, 182, "Input"],
-Cell[27738, 669, 2620, 49, 594, "Output"]
+Cell[25464, 595, 2348, 65, 182, "Input"],
+Cell[27815, 662, 2620, 49, 594, "Output"]
 }, {2}]]
-}, Open  ]]
+}, Open  ]],
+Cell[30459, 715, 117, 1, 64, "Section"]
 }, Open  ]]
 }
 ]
