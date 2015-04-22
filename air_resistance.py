@@ -3,12 +3,17 @@
 # original code by Byron Philhour
 # modified by Raewyn Duvall & John C. Merfeld
 
+# DONE:
+#   drag coefficient now takes area into account
+#   drag force now functionalized
+
 # TODO
 
 # primary:
 # build boilerplate code appropriately
-# update drag coefficient to accurately take area into account
-# 
+# add support for side-by-side comparison of b = 0 and b > 0 cases
+ 
+
 # secondary:
 # ensure that air resistance is discussed, the key concept being that it is
 #   dependent on velocity
@@ -16,7 +21,6 @@
 #   need to facilitate that
 # starting by thowing them up might be more useful than bouncing, as it
 #   reveals other interesting features of the problem
-# side-by-side comparison of b = 0 and b > 0 cases
 
 from __future__ import division # import decimal division
 from visual import *            # import standard visual python
@@ -24,11 +28,22 @@ from visual.graph import *      # import graphing features
 from numpy import pi
 
 # function definition:
+
+# drag equation:
+#   I think if we left it as something like:
+
+#   def drag_equation():    # add parameters!
+#       (maybe outline the algorithm here?)
+#       return drag
+
+#   That could be a good way to do it. Basically every calculation down there 
+#       I think we could spread to up here. All the kinematics stuff, etc.
+
 def drag_equation(b, p, v, r):
     
     A = pi*(r**2)
-    drag = vector(0,0,0)
-    drag.x = -0.5*b*p*A*((v.x)**2)
+    drag = vector(0,0,0)            # these three could be done in one line
+    drag.x = -0.5*b*p*A*((v.x)**2)  # but it would be huge and gross
     drag.y = -0.5*b*p*A*((v.y)**2)
 
     return drag
