@@ -34,18 +34,18 @@ def drag_equation(b, p, v, r):
     return drag
 
 # make the floor
-ground = box(pos = (0,0,0), size = (15,0.1,15), color = color.green)
+ground = box(pos = (0,0,0), size = (15,0.1,100), color = color.green)
 
 # make and set up our bouncing ball
-ball = sphere(pos = (1,1,1), radius = 1, color = color.yellow)
+ball = sphere(pos = (1,5,1), radius = 1, color = color.yellow)
 ball.velocity = vector(3,20,0) # starting velocity in m/s
 ball.accel = vector(0,0,0)    # starig acceleration in m/s^2
 ball.mass = 2.0               # staring mass in kg
 gravity = 9.8                 # acceleration du to gravity in m/s^2
-coeff_rest = .9               # % velocity remains after collision
+coeff_rest = 1               # % velocity remains after collision
 p = 1.2                       # air density
 
-b = 1 # drag coefficient
+b = .15 # drag coefficient
 
 deltat = 0.05 # time step
 t = 0         # starting time
@@ -59,12 +59,12 @@ velocitycurve = gcurve(display = graph.display, color = color.cyan)
 # loop action
 while t < t_end:
     # control flow of time -- rate sets loops/sec
-    rate(200) # note if this number times deltat is one, we're in "real time"
+    rate(50) # note if this number times deltat is one, we're in "real time"
     t = t + deltat # update time coordinate for plot
 
     # figure out the net force acting on the ball
     ball.F_gravity = vector(0, -ball.mass*gravity,0) # gravitational force
-    ball.F_drag = drag_equation(b, p, ball.velocity, ball.radius)     
+    ball.F_drag = drag_equation(b, p, ball.velocity, ball.radius)  
     ball.F_net = ball.F_gravity + ball.F_drag        # sum of forces
 
     # Newton's 2nd Law
