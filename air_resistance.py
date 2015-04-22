@@ -37,7 +37,10 @@ from numpy import pi
 #       return drag
 
 #   That could be a good way to do it. Basically every calculation down there 
-#       I think we could spread to up here. All the kinematics stuff, etc.
+#       I think we could spread to up here. All the kinematics stuff, etc. We
+#       could still call the functions with the right arguments in the main 
+#       code so they know what to work with, but they'd have to figure out
+#       what to do with those parameters
 
 def drag_equation(b, p, v, r):
     
