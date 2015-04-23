@@ -19,6 +19,14 @@
 #   need to facilitate that
 # starting by thowing them up might be more useful than bouncing, as it
 #   reveals other interesting features of the problem
+# make sure the syntax and possible operations for objects are made clear
+#   in the tutorial / outline
+#   include members it can hold, ways we can act on it
+# good way to introduce things like the rest coefficient: "How can we modify
+#   this so that the ball loses energy each time it hits the ground?"
+# always be asking questions. Talk about discretization, why it is necessary,
+#   and how it can be coded
+#   
 
 from __future__ import division # import decimal division
 from visual import *            # import standard visual python
@@ -40,14 +48,16 @@ from numpy import pi
 #       code so they know what to work with, but they'd have to figure out
 #       what to do with those parameters
 
+
+
 def drag_equation(b, p, v, r):
     
     A = pi*(r**2)
-    drag = vector(0,0,0)            # these three could be done in one line
-    drag.x = -0.5*b*p*A*((v.x)**2)  # but it would be huge and gross
-    drag.y = -0.5*b*p*A*((v.y)**2)
+    F_drag = vector(0,0,0)            # these three could be done in one line
+    F_drag.x = -0.5*b*p*A*((v.x)**2)  # but it would be huge and gross
+    F_drag.y = -0.5*b*p*A*((v.y)**2)
 
-    return drag
+    return F_drag
 
 def calculate_forces(body, p):
 
