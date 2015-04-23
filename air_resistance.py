@@ -51,6 +51,14 @@ def drag_equation(b, p, v, r):
 
     return drag
 
+def calculate_forces(body, p):
+
+    body.F_gravity = vector(0, -body.mass*gravity,0) # gravitational force
+    body.F_drag = drag_equation(body.b, p, body.velocity, body.radius) 
+
+    return body
+
+
 def update_kinematics(body):
 
     # Newton's 2nd Law
@@ -59,6 +67,14 @@ def update_kinematics(body):
     #update kinematics
     body.velocity = body.velocity + body.accel*deltat # delta-v = a * delta-t
     body.pos = body.pos + body.velocity*deltat        # delta-x = a * delta-a
+
+    return body
+
+def collision_check(body, ground, coeff_rest):
+
+    if body.pos.y - body.radius < ground.pos.y:
+        body.velocity.y = -1 * coeff_rest * body.velocity.y
+        body.pos.y = body.radius #avoid getting trapped
 
     return body
 
@@ -109,17 +125,13 @@ while t < t_end:
     ball.F_net = ball.F_gravity + ball.F_drag        # sum of forces
     ball2.F_net = ball2.F_gravity + ball2.F_drag
 
+    # respond to forces
     ball = update_kinematics(ball)
     ball2 = update_kinematics(ball2)
 
-    #check for collision with the ground
-    if ball.pos.y - ball.radius < ground.pos.y:
-        ball.velocity.y = -1 * coeff_rest * ball.velocity.y
-        ball.pos.y = ball.radius #avoid getting trapped
-
-    if ball2.pos.y - ball2.radius < ground.pos.y:
-        ball2.velocity.y = -1 * coeff_rest * ball2.velocity.y
-        ball2.pos.y = ball2.radius
+    # check for collision with the ground
+    ball = collision_check(ball, ground, coeff_rest)
+    ball2 = collision_check(ball2, ground, coeff_rest)
 
     # plot a single point on our graph -- the y-velocity of the ball vs. time
     velocitycurve.plot(pos=(t, ball.velocity.y))
