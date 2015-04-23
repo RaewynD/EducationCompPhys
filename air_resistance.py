@@ -10,9 +10,7 @@
 # TODO
 
 # primary:
-# build boilerplate code appropriately
-# add support for side-by-side comparison of b = 0 and b > 0 cases
- 
+# build boilerplate code appropriately 
 
 # secondary:
 # ensure that air resistance is discussed, the key concept being that it is
@@ -54,7 +52,8 @@ def drag_equation(b, p, v, r):
 def calculate_forces(body, p):
 
     body.F_gravity = vector(0, -body.mass*gravity,0) # gravitational force
-    body.F_drag = drag_equation(body.b, p, body.velocity, body.radius) 
+    body.F_drag = drag_equation(body.b, p, body.velocity, body.radius)
+    body.F_net = body.F_gravity + body.F_drag        # sum of forces
 
     return body
 
@@ -117,13 +116,9 @@ while t < t_end:
     rate(50) # note if this number times deltat is one, we're in "real time"
     t = t + deltat # update time coordinate for plot
 
-    # figure out the net force acting on the ball
-    ball.F_gravity = vector(0, -ball.mass*gravity,0) # gravitational force
-    ball2.F_gravity = vector(0, -ball2.mass*gravity,0)
-    ball.F_drag = drag_equation(ball.b, p, ball.velocity, ball.radius)  
-    ball2.F_drag = drag_equation(ball2.b, p, ball2.velocity, ball2.radius)
-    ball.F_net = ball.F_gravity + ball.F_drag        # sum of forces
-    ball2.F_net = ball2.F_gravity + ball2.F_drag
+    # calculate forces
+    ball = calculate_forces(ball, p)
+    ball2 = calculate_forces(ball2, p)
 
     # respond to forces
     ball = update_kinematics(ball)
