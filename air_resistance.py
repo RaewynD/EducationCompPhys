@@ -51,19 +51,35 @@ def drag_equation(b, p, v, r):
 
     return drag
 
+def update_kinematics(body):
+
+    # Newton's 2nd Law
+    body.accel = body.F_net / body.mass
+
+    #update kinematics
+    body.velocity = body.velocity + body.accel*deltat # delta-v = a * delta-t
+    body.pos = body.pos + body.velocity*deltat        # delta-x = a * delta-a
+
+    return body
+
 # make the floor
 ground = box(pos = (0,0,0), size = (15,0.1,100), color = color.green)
 
 # make and set up our bouncing ball
 ball = sphere(pos = (1,5,1), radius = 1, color = color.yellow)
+ball2 = sphere(pos = (1,5,1), radius = 1, color = color.red)
 ball.velocity = vector(3,20,0) # starting velocity in m/s
+ball2.velocity = ball.velocity
 ball.accel = vector(0,0,0)    # starig acceleration in m/s^2
+ball2.accel = ball.accel
 ball.mass = 2.0               # staring mass in kg
+ball2.mass = ball.mass
 gravity = 9.8                 # acceleration du to gravity in m/s^2
-coeff_rest = 1               # % velocity remains after collision
+coeff_rest = .9               # % velocity remains after collision
 p = 1.2                       # air density
 
-b = .15 # drag coefficient
+ball.b = .1 # drag coefficient
+ball2.b = 0
 
 deltat = 0.05 # time step
 t = 0         # starting time
@@ -74,6 +90,11 @@ graph = gdisplay(x = 0, y = 400, width = 425, height = 400, \
                  title = "y-velocity vs. time")
 velocitycurve = gcurve(display = graph.display, color = color.cyan)
 
+graph2 = gdisplay(x = 0, y = 400, width = 425, height = 400, \
+                 title = "y-velocity vs. time")
+velocitycurve2 = gcurve(display = graph.display, color = color.cyan)
+
+
 # loop action
 while t < t_end:
     # control flow of time -- rate sets loops/sec
@@ -82,21 +103,25 @@ while t < t_end:
 
     # figure out the net force acting on the ball
     ball.F_gravity = vector(0, -ball.mass*gravity,0) # gravitational force
-    ball.F_drag = drag_equation(b, p, ball.velocity, ball.radius)  
+    ball2.F_gravity = vector(0, -ball2.mass*gravity,0)
+    ball.F_drag = drag_equation(ball.b, p, ball.velocity, ball.radius)  
+    ball2.F_drag = drag_equation(ball2.b, p, ball2.velocity, ball2.radius)
     ball.F_net = ball.F_gravity + ball.F_drag        # sum of forces
+    ball2.F_net = ball2.F_gravity + ball2.F_drag
 
-    # Newton's 2nd Law
-    ball.accel = ball.F_net / ball.mass
-
-    #update kinematics
-    ball.velocity = ball.velocity + ball.accel*deltat # delta-v = a * delta-t
-    ball.pos = ball.pos + ball.velocity*deltat        # delta-x = a * delta-a
+    ball = update_kinematics(ball)
+    ball2 = update_kinematics(ball2)
 
     #check for collision with the ground
     if ball.pos.y - ball.radius < ground.pos.y:
         ball.velocity.y = -1 * coeff_rest * ball.velocity.y
         ball.pos.y = ball.radius #avoid getting trapped
 
+    if ball2.pos.y - ball2.radius < ground.pos.y:
+        ball2.velocity.y = -1 * coeff_rest * ball2.velocity.y
+        ball2.pos.y = ball2.radius
+
     # plot a single point on our graph -- the y-velocity of the ball vs. time
     velocitycurve.plot(pos=(t, ball.velocity.y))
+    velocitycurve2.plot(pos=(t, ball2.velocity.y))
 
