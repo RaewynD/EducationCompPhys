@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     27465,        639]
-NotebookOptionsPosition[     26685,        607]
-NotebookOutlinePosition[     27041,        623]
-CellTagsIndexPosition[     26998,        620]
+NotebookDataLength[     28030,        656]
+NotebookOptionsPosition[     27179,        621]
+NotebookOutlinePosition[     27535,        637]
+CellTagsIndexPosition[     27492,        634]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -479,7 +479,7 @@ Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`b$$ = 0.3, $CellContext`g$$ = 
-    9.8, $CellContext`m$$ = 0.5, $CellContext`tf$$ = 9.08, $CellContext`v0$$ =
+    9.8, $CellContext`m$$ = 0.5, $CellContext`tf$$ = 4.02, $CellContext`v0$$ =
      45., $CellContext`\[Theta]$$ = 1.09, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
@@ -514,18 +514,18 @@ Cell[BoxData[
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, "Body" :> Grid[{{{
            
-           ParametricPlot[{{$CellContext`t $CellContext`v0$$ 
+           ParametricPlot[{{($CellContext`t $CellContext`v0$$) 
               Cos[$CellContext`\[Theta]$$], -($CellContext`g$$ \
-$CellContext`t^2/2) + $CellContext`t $CellContext`v0$$ 
-               Sin[$CellContext`\[Theta]$$]}, {$CellContext`t \
-$CellContext`v0$$ 
+($CellContext`t^2/2)) + ($CellContext`t $CellContext`v0$$) 
+               Sin[$CellContext`\[Theta]$$]}, {($CellContext`t \
+$CellContext`v0$$) 
               Cos[$CellContext`\[Theta]$$], $CellContext`m$$ \
-($CellContext`g$$ $CellContext`m$$ - $CellContext`b$$ $CellContext`g$$ \
-$CellContext`t + $CellContext`b$$ $CellContext`v0$$ 
-                Sin[$CellContext`\[Theta]$$] - 
-               E^(-($CellContext`b$$ $CellContext`t/$CellContext`m$$)) \
-($CellContext`g$$ $CellContext`m$$ + $CellContext`b$$ $CellContext`v0$$ 
-                 Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2}}, \
+(($CellContext`g$$ $CellContext`m$$ - ($CellContext`b$$ $CellContext`g$$) \
+$CellContext`t + ($CellContext`b$$ $CellContext`v0$$) 
+                 Sin[$CellContext`\[Theta]$$] - 
+                E^(-($CellContext`b$$ ($CellContext`t/$CellContext`m$$))) \
+($CellContext`g$$ $CellContext`m$$ + ($CellContext`b$$ $CellContext`v0$$) 
+                  Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2)}}, \
 {$CellContext`t, 0, $CellContext`tf$$}, 
             PlotStyle -> {{Thick, Blue}, {Thick, Red}}, AxesOrigin -> {0, 0}, 
             AxesLabel -> {"x(t) (meters)", "y(t) (meters)"}, 
@@ -534,26 +534,28 @@ $CellContext`t + $CellContext`b$$ $CellContext`v0$$
             "y(t) vs. x(t)", Epilog -> {Green, 
               PointSize[0.02], 
               
-              Point[{{$CellContext`tf$$ $CellContext`v0$$ 
+              Point[{{($CellContext`tf$$ $CellContext`v0$$) 
                  Cos[$CellContext`\[Theta]$$], -($CellContext`g$$ \
-$CellContext`tf$$^2/2) + $CellContext`tf$$ $CellContext`v0$$ 
-                  Sin[$CellContext`\[Theta]$$]}, {$CellContext`tf$$ \
-$CellContext`v0$$ 
+($CellContext`tf$$^2/2)) + ($CellContext`tf$$ $CellContext`v0$$) 
+                  Sin[$CellContext`\[Theta]$$]}, {($CellContext`tf$$ \
+$CellContext`v0$$) 
                  Cos[$CellContext`\[Theta]$$], $CellContext`m$$ \
-($CellContext`g$$ $CellContext`m$$ - $CellContext`b$$ $CellContext`g$$ \
-$CellContext`tf$$ + $CellContext`b$$ $CellContext`v0$$ 
-                   Sin[$CellContext`\[Theta]$$] - 
-                  E^(-($CellContext`b$$ $CellContext`tf$$/$CellContext`m$$)) \
-($CellContext`g$$ $CellContext`m$$ + $CellContext`b$$ $CellContext`v0$$ 
-                    Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2}}]}]}, \
+(($CellContext`g$$ $CellContext`m$$ - ($CellContext`b$$ $CellContext`g$$) \
+$CellContext`tf$$ + ($CellContext`b$$ $CellContext`v0$$) 
+                    Sin[$CellContext`\[Theta]$$] - 
+                   E^(-($CellContext`b$$ \
+($CellContext`tf$$/$CellContext`m$$))) ($CellContext`g$$ $CellContext`m$$ + \
+($CellContext`b$$ $CellContext`v0$$) 
+                    Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2)}}]}]}, \
 {$CellContext`tf$$ " seconds"}}, {{
            
            ParametricPlot[{{$CellContext`t, (-$CellContext`g$$) \
 $CellContext`t + $CellContext`v0$$ 
+               
                Sin[$CellContext`\[Theta]$$]}, {$CellContext`t, \
 ((-$CellContext`g$$) $CellContext`m$$ + 
-               E^(-($CellContext`b$$ $CellContext`t/$CellContext`m$$)) \
-($CellContext`g$$ $CellContext`m$$ + $CellContext`b$$ $CellContext`v0$$ 
+               E^(-($CellContext`b$$ ($CellContext`t/$CellContext`m$$))) \
+($CellContext`g$$ $CellContext`m$$ + ($CellContext`b$$ $CellContext`v0$$) 
                   Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$}}, \
 {$CellContext`t, 0, $CellContext`tf$$}, 
             PlotStyle -> {{Thick, Blue}, {Thick, Red}}, AxesOrigin -> {0, 0}, 
@@ -566,8 +568,8 @@ $CellContext`t + $CellContext`v0$$
            ParametricPlot[{{$CellContext`t, -$CellContext`g$$}, \
 {$CellContext`t, -$CellContext`g$$ - ($CellContext`b$$/$CellContext`m$$) \
 (((-$CellContext`g$$) $CellContext`m$$ + 
-                E^(-($CellContext`b$$ $CellContext`t/$CellContext`m$$)) \
-($CellContext`g$$ $CellContext`m$$ + $CellContext`b$$ $CellContext`v0$$ 
+                E^(-($CellContext`b$$ ($CellContext`t/$CellContext`m$$))) \
+($CellContext`g$$ $CellContext`m$$ + ($CellContext`b$$ $CellContext`v0$$) 
                    Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$)}}, \
 {$CellContext`t, 0, $CellContext`tf$$}, 
             PlotStyle -> {{Thick, Blue}, {Thick, Red}}, AxesOrigin -> {0, 0}, 
@@ -601,8 +603,20 @@ $CellContext`t + $CellContext`v0$$
 }, {2}]]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
 Cell["Experimenting with air resistance", "Section",
- CellChangeTimes->{{3.637940923512371*^9, 3.63794092789876*^9}}]
+ CellChangeTimes->{{3.637940923512371*^9, 3.63794092789876*^9}}],
+
+Cell["\<\
+So how well do our simulations of motion with air resistance reflect what \
+happens in the real world? In this section, you will look at a ball with and \
+without air resistance and decide how well the simulation captures the \
+behavior you observe.\
+\>", "Text",
+ CellChangeTimes->{{3.638269065377967*^9, 3.638269145590884*^9}, {
+  3.638269202354343*^9, 3.6382692269797277`*^9}}]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1280, 751},
@@ -636,10 +650,13 @@ Cell[6204, 144, 113, 2, 50, "Section"],
 Cell[6320, 148, 130, 3, 30, "Text"],
 Cell[CellGroupData[{
 Cell[6475, 155, 13141, 320, 857, "Input"],
-Cell[19619, 477, 6909, 122, 1000, "Output"]
+Cell[19619, 477, 6976, 124, 1000, "Output"]
 }, {2}]]
 }, Open  ]],
-Cell[26552, 603, 117, 1, 64, "Section"]
+Cell[CellGroupData[{
+Cell[26641, 607, 117, 1, 64, "Section"],
+Cell[26761, 610, 390, 7, 49, "Text"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
