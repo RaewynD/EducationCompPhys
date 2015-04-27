@@ -59,6 +59,7 @@ t_end = 100      # end time
 
 t = t_0
 
+# while the simulation is running:
 while t < t_end:
 
     # calculate forces
@@ -77,6 +78,7 @@ while t < t_end:
     velocitycurve_1.plot(pos=(t, ball_1.velocity.y))
     velocitycurve_2.plot(pos=(t, ball_2.velocity.y))
 
+    # increment forward in time
     t += delta_t
     rate(300)    # rate (frequency)
                  # stops computation for 1 / frequency seconds
