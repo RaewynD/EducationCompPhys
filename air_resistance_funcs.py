@@ -75,9 +75,16 @@ def calculate_drag(b, p, v, r):
 
 def calculate_forces(body):
 
-    body.F_g = vector(0, -body.mass*g,0) # gravitational force
+    # first, we make a vector for gravity and assign it to the body
+
+    # the only other force we are concerned with is drag. We can handle this
+    #     in a separate function
     body.F_drag = calculate_drag(body.b, p, body.velocity, body.radius)
-    body.F_net = body.F_g + body.F_drag        # sum of forces
+    
+    # are there any other natural forces that may act on the ball? How might
+    #     account for them?
+
+    # now, simply find F_net and assign it to the body
 
     return body
 
@@ -92,10 +99,10 @@ def calculate_forces(body):
 # accessed with body.F_net
 def update_kinematics(body, delta_t):
 
-    # apply Newton's 2nd Law:
+    # apply Newton's 2nd Law to our object:
     # F = m*a
 
-    # update kinematics:
+    # update kinematics of our object:
     # a = delta_v / delta_t
     # v = delta_x / delta_t
 
@@ -103,12 +110,28 @@ def update_kinematics(body, delta_t):
     # velocity and position?
     return body
 
+# collision_check
+#
+#     this function checks the object's position relative to the ground. If
+# the object has in contact with the ground, it should bounce back up
 def collision_check(body, ground):
 
-    if body.pos.y - body.radius < ground.pos.y:
-        body.velocity.y = -1 * rest_coeff * body.velocity.y
-        body.pos.y = body.radius #avoid getting trapped
+    # check IF the object has made contact with the ground (recall that 
+    #     bouncing is a strictly up-and-down motion, so if the ground is flat,
+    #     only the y-coordinate of position is relevent)
 
+        # if the ball hit the ground, we need to update its velocity so that
+        #     it bounces back up (we should also shift its position up by 
+        #     enough so that it does not too close to the ground at the next 
+        #     time step
+        #
+        # what is a good distance to shift the position?
+        #
+        # how can we account for the ball losing some energy every time it 
+        #     hits the ground?
+
+    # if the ball didn't hit the ground, we have nothing to do!
+        
     return body
 
 #########################################
