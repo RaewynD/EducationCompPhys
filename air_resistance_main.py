@@ -20,7 +20,7 @@
 
 #import air_resistance_funcs
 from air_resistance_funcs import initialize
-from air_resistance_funcs import drag_equation
+from air_resistance_funcs import calculate_drag
 from air_resistance_funcs import calculate_forces
 from air_resistance_funcs import update_kinematics
 from air_resistance_funcs import collision_check
@@ -78,7 +78,7 @@ while t < t_end:
     velocitycurve_2.plot(pos=(t, ball_2.velocity.y))
 
     t += delta_t
-    rate(150)    # rate (frequency)
+    rate(300)    # rate (frequency)
                  # stops computation for 1 / frequency seconds
 
 
