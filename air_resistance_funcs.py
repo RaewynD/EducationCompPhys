@@ -85,11 +85,12 @@ def calculate_forces(body):
 #
 #     this function takes in a body and a time step. What we want to do is 
 # use the forces acting on the body to update its acceleration, then use the
-# definitions of acceleration and velocity to update the ball's position
+# definitions of acceleration and velocity to update the ball's position and
+# velocity
 #
 #     recall that in our simulation, forces belong to the body and can be 
 # accessed with body.F_net
-def update_position(body, delta_t):
+def update_kinematics(body, delta_t):
 
     # apply Newton's 2nd Law:
     # F = m*a
@@ -98,8 +99,8 @@ def update_position(body, delta_t):
     # a = delta_v / delta_t
     # v = delta_x / delta_t
 
-    # how can we use this information to update the ball's position?
-
+    # how can we use this information to appropriately change the ball's
+    # velocity and position?
     return body
 
 def collision_check(body, ground):

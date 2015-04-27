@@ -22,7 +22,7 @@
 from air_resistance_solution import initialize
 from air_resistance_solution import calculate_drag
 from air_resistance_solution import calculate_forces
-from air_resistance_solution import update_position
+from air_resistance_solution import update_kinematics
 from air_resistance_solution import collision_check
 from visual import *                # include standard visual python
 from visual.graph import *          # include graphing features
@@ -66,8 +66,8 @@ while t < t_end:
     ball_2 = calculate_forces(ball_2)
 
     # respond to forces
-    ball_1 = update_position(ball_1, delta_t)
-    ball_2 = update_position(ball_2, delta_t)
+    ball_1 = update_kinematics(ball_1, delta_t)
+    ball_2 = update_kinematics(ball_2, delta_t)
 
     # check for collision with the ground
     ball_1 = collision_check(ball_1, ground)

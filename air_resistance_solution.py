@@ -71,12 +71,12 @@ def calculate_forces(body):
     return body
 
 
-def update_position(body, delta_t):
+def update_kinematics(body, delta_t):
 
     # Newton's 2nd Law
     body.accel = body.F_net / body.mass
 
-    #update position
+    #update velocity position
     body.velocity = body.velocity + body.accel*delta_t # delta-v = a * delta-t
     body.pos = body.pos + body.velocity*delta_t        # delta-x = a * delta-a
 
