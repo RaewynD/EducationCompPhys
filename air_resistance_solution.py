@@ -1,5 +1,5 @@
 # HEADER ################################
-# air_resistance_funcs.py               #
+# air_resistance_solution.py            #
 #                                       #
 # original model by Byron Philhour      #
 # template designed by John C. Merfeld  #
@@ -7,19 +7,10 @@
 #                                       #
 #########################################
 
-# NOTE FOR RAEWYN:
-# I'm in the process of stripping this down. See update_kinematics for an
-# idea of how I thought that could look
-
-# TODO
-# strip it all!
-# give equations, tell them to implement
-
-
-#     You will define the values and functions below, which will be used by
-# the main simulation. 
-#
-#
+#     This is a fully implemented sample solution to the problem, for 
+# reference and testing. This is by no means the only functional implementation
+# and not all the parameters added here are necessary for the functionality
+# of the simulatiion.
 
 # IMPORTED PACKAGES #####################
 from __future__ import division     # include decimal division
@@ -31,20 +22,19 @@ from numpy import pi                # include machine-precise value of pi
 
 # add appropriate values here 
 # (some of which are known constants!)
-g = ?                               # acceleration due to g in m/s^2
-rest_coeff = ?                      # percentage of velocity remaining
+g = 9.81                               # acceleration due to g in m/s^2
+rest_coeff = .9                      # percentage of velocity remaining
                                     #     after collision with ground
-p = ?                               # air density in kg/m^2
+p = 1.2                               # air density in kg/m^2
 
-drag_1 = ?                          # drag coefficients for the two balls
-drag_2 = 0                          # always compare to zero drag
+drag_1 = .1                           # drag coefficients for the two balls
+drag_2 = 0
 
 #########################################
 
 
 # FUNCTION DEFINITIONS ##################
 
-# initialize
 def initialize(name):
 
     # both spheres should have identitcal initial conditions
@@ -56,14 +46,13 @@ def initialize(name):
     # but they should have different appearance and drag behavior
     if name == 1:
         body.color = color.yellow       # color
-        body.b = drag_1                 # drag coefficient for object
+        body.b = .1                     # drag coefficient for object
     if name == 2:
         body.color = color.red          # color
-        body.b = drag_2                 # drag coefficient
+        body.b = 0                      # drag coefficient
 
     return body    
 
-# give equation. Tell them to set it for x and y
 def calculate_drag(b, p, v, r):
     
     A = pi*(r**2)
@@ -81,24 +70,15 @@ def calculate_forces(body):
 
     return body
 
-# update_kinematics
-#
-#     this function takes in a body and a time step. What we want to do is 
-# use the forces acting on the body to update its acceleration, then use the
-# definitions of acceleration and velocity to update the ball's position
-#
-#     recall that in our simulation, forces belong to the body and can be 
-# accessed with body.F_net
+
 def update_position(body, delta_t):
 
-    # apply Newton's 2nd Law:
-    # F = m*a
+    # Newton's 2nd Law
+    body.accel = body.F_net / body.mass
 
-    # update kinematics:
-    # a = delta_v / delta_t
-    # v = delta_x / delta_t
-
-    # how can we use this information to update the ball's position?
+    #update position
+    body.velocity = body.velocity + body.accel*delta_t # delta-v = a * delta-t
+    body.pos = body.pos + body.velocity*delta_t        # delta-x = a * delta-a
 
     return body
 
@@ -111,3 +91,4 @@ def collision_check(body, ground):
     return body
 
 #########################################
+
