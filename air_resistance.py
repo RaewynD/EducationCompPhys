@@ -33,22 +33,12 @@ from visual import *            # import standard visual python
 from visual.graph import *      # import graphing features
 from numpy import pi
 
+# global constants:
+gravity = 9.8                 # acceleration du to gravity in m/s^2
+coeff_rest = .9               # % velocity remains after collision
+p = 1.2                       # air density
+
 # function definition:
-
-# drag equation:
-#   I think if we left it as something like:
-
-#   def drag_equation():    # add parameters!
-#       (maybe outline the algorithm here?)
-#       return drag
-
-#   That could be a good way to do it. Basically every calculation down there 
-#       I think we could spread to up here. All the kinematics stuff, etc. We
-#       could still call the functions with the right arguments in the main 
-#       code so they know what to work with, but they'd have to figure out
-#       what to do with those parameters
-
-
 
 def drag_equation(b, p, v, r):
     
@@ -99,9 +89,6 @@ ball.accel = vector(0,0,0)    # starig acceleration in m/s^2
 ball2.accel = ball.accel
 ball.mass = 2.0               # staring mass in kg
 ball2.mass = ball.mass
-gravity = 9.8                 # acceleration du to gravity in m/s^2
-coeff_rest = .9               # % velocity remains after collision
-p = 1.2                       # air density
 
 ball.b = .1 # drag coefficient
 ball2.b = .1
@@ -113,11 +100,11 @@ t_end = 100   # end time
 # set up graph
 graph = gdisplay(x = 0, y = 400, width = 425, height = 400, \
                  title = "y-velocity vs. time")
-velocitycurve = gcurve(display = graph.display, color = color.cyan)
+velocitycurve = gcurve(display = graph.display, color = color.yellow)
 
 graph2 = gdisplay(x = 0, y = 400, width = 425, height = 400, \
                  title = "y-velocity vs. time")
-velocitycurve2 = gcurve(display = graph.display, color = color.cyan)
+velocitycurve2 = gcurve(display = graph.display, color = color.red)
 
 
 # simulate through time:

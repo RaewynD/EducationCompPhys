@@ -23,18 +23,23 @@ from numpy import pi                # include machine-precise value of pi
 
 # add appropriate values here 
 # (some of which are known constants!)
-g = ?                               # acceleration due to gravity in m/s^2
-rest_coeff = ?                      # percentage of velocity remaining
+g = 9.81                               # acceleration due to gravity in m/s^2
+rest_coeff = .9                      # percentage of velocity remaining
                                     #     after collision with ground
-p = ?                               # air density in kg/m^2
+p = 1.2                               # air density in kg/m^2
 
-drag_1 = ?                           # drag coefficients for the two balls
-drag_2 = ?
+drag_1 = .1                           # drag coefficients for the two balls
+drag_2 = 0
 
 #########################################
 
 
 # FUNCTION DEFINITIONS ##################
+
+def initialize(name):
+
+    body = sphere(pos = (1,5,1), radius = 1)
+    
 
 def drag_equation(b, p, v, r):
     

@@ -26,11 +26,11 @@ import air_resistance_funcs
 # graphs:
 graph_1 = gdisplay(x = 0, y = 400, width = 425, height = 400, \
                  title = "YELLOW y-velocity vs. time")
-velocitycurve_1 = gcurve(display = graph.display, color = color.cyan)
+velocitycurve_1 = gcurve(display = graph.display, color = color.yellow)
 
 graph2_2 = gdisplay(x = 0, y = 400, width = 425, height = 400, \
                  title = "RED y-velocity vs. time")
-velocitycurve_2 = gcurve(display = graph.display, color = color.cyan)
+velocitycurve_2 = gcurve(display = graph.display, color = color.red)
 
 # visualize ground in the simulation:
 ground = box(pos = (0,0,0), size = (15,0.1,100), color = color.green)
@@ -44,9 +44,9 @@ ball_2 = initialize(2)
 
 # DISCRETIZE SYSTEM #####################
 
-deltat = 0.01 # time step
-t_0 = 0         # starting time
-t_end = 100   # end time
+deltat = 0.01    # time step
+t_0 = 0          # starting time
+t_end = 100      # end time
 
 
 # SIMULATE THROUGH TIME #################
