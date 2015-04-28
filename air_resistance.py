@@ -33,22 +33,12 @@ from visual import *            # import standard visual python
 from visual.graph import *      # import graphing features
 from numpy import pi
 
+# global constants:
+gravity = 9.8                 # acceleration du to gravity in m/s^2
+coeff_rest = .9               # % velocity remains after collision
+p = 1.2                       # air density
+
 # function definition:
-
-# drag equation:
-#   I think if we left it as something like:
-
-#   def drag_equation():    # add parameters!
-#       (maybe outline the algorithm here?)
-#       return drag
-
-#   That could be a good way to do it. Basically every calculation down there 
-#       I think we could spread to up here. All the kinematics stuff, etc. We
-#       could still call the functions with the right arguments in the main 
-#       code so they know what to work with, but they'd have to figure out
-#       what to do with those parameters
-
-
 
 def drag_equation(b, p, v, r):
     
@@ -92,39 +82,36 @@ ground = box(pos = (0,0,0), size = (15,0.1,100), color = color.green)
 
 # make and set up our bouncing ball
 ball = sphere(pos = (1,5,1), radius = 1, color = color.yellow)
-ball2 = sphere(pos = (1,5,1), radius = 1, color = color.red)
+ball2 = sphere(pos = (1,5,1), radius = 2, color = color.red)
 ball.velocity = vector(3,20,0) # starting velocity in m/s
 ball2.velocity = ball.velocity
 ball.accel = vector(0,0,0)    # starig acceleration in m/s^2
 ball2.accel = ball.accel
 ball.mass = 2.0               # staring mass in kg
 ball2.mass = ball.mass
-gravity = 9.8                 # acceleration du to gravity in m/s^2
-coeff_rest = .9               # % velocity remains after collision
-p = 1.2                       # air density
 
 ball.b = .1 # drag coefficient
-ball2.b = 0
+ball2.b = .1
 
-deltat = 0.05 # time step
+deltat = 0.01 # time step
 t = 0         # starting time
-t_end = 100    # end time
+t_end = 100   # end time
 
 # set up graph
 graph = gdisplay(x = 0, y = 400, width = 425, height = 400, \
                  title = "y-velocity vs. time")
-velocitycurve = gcurve(display = graph.display, color = color.cyan)
+velocitycurve = gcurve(display = graph.display, color = color.yellow)
 
 graph2 = gdisplay(x = 0, y = 400, width = 425, height = 400, \
                  title = "y-velocity vs. time")
-velocitycurve2 = gcurve(display = graph.display, color = color.cyan)
+velocitycurve2 = gcurve(display = graph.display, color = color.red)
 
 
-# loop action
+# simulate through time:
 while t < t_end:
     # control flow of time -- rate sets loops/sec
-    rate(50) # note if this number times deltat is one, we're in "real time"
-    t = t + deltat # update time coordinate for plot
+    rate(100)    # rate (frequency)
+                 # stops computation for 1 / frequency seconds
 
     # calculate forces
     ball = calculate_forces(ball, p)
@@ -141,4 +128,7 @@ while t < t_end:
     # plot a single point on our graph -- the y-velocity of the ball vs. time
     velocitycurve.plot(pos=(t, ball.velocity.y))
     velocitycurve2.plot(pos=(t, ball2.velocity.y))
+
+    # update time coordinate for plot
+    t = t + deltat 
 
