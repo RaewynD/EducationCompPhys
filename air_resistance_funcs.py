@@ -13,7 +13,8 @@
 # Define the functions below that are used in the main simulation.
 # Function headers tell you what the function should do, but use the given API
 # to write the code.
-# Notice how certain calculations are easily implimented here though they may
+#
+# Notice how certain calculations are easily implemented here though they may
 # be tedious when done by hand.
 #
 
@@ -41,7 +42,7 @@ drag_2 = 0          # other ball always zero drag for comparison
 
 # function: initialize
 # input: name
-# output: 3D object
+# output: 3D object (body)
 # implementation: initialize a 3d object with the following properties:
 #       body is a sphere with pos=(x,y,z) and radius=d (you decide x,y,z,d)
 #       body has initial velocity vector of 
@@ -49,7 +50,7 @@ drag_2 = 0          # other ball always zero drag for comparison
 #           y along the y-axis (you decide y)
 #           0 along the z-axis [(sorry, but this must be zero)]
 #       body has initial zero acceleration vector
-#       body has mass of x (you decide x)
+#       body has mass of m (you decide m)
 #       if name==1 then body has color yellow and drag of drag_1
 #       if name==2 then body has color red and drag of drag_2
 #       note: the name is for differentiating the balls in the simulation
@@ -61,8 +62,8 @@ def initialize(name):
 
     return body    
 
-# Why are some initializations arbitrary while others are not?
-# Why is the initial zero acceleration zerio?
+# Why can you choose some initialization values for variables
+# while others should be set to specific values, such as acceleration?
 
 # function: calculate_drag
 # input: b - drag of ball
@@ -71,11 +72,11 @@ def initialize(name):
 #        r - radius of ball
 # output: F_drag - drag force on ball
 # implementation: calculates the drag force on the ball by the following:
-#       calulates area [with A=pi*r^2]
+#       calulates area [hint: with A=pi*r^2]
 #       initializes a zero drag force vector
 #       sets drag force of x-axis and y-axis using the following formula:
 #           drag = -0.5*b*p*A*velocity^2
-#       note: velocity in this case is respective to the corresponding axis
+#       note: velocity in this case is split into components corresponding to each axis
 #       note: the syntax for x^2 in python is x**2
 def calculate_drag(b, p, v, r):
     
@@ -91,7 +92,7 @@ def calculate_drag(b, p, v, r):
 # input: body
 # output: body
 # implementation: set forces on body using the following:
-#       set force of gravity on the body [to -mg]
+#       set force of gravity on the body [hint: to -mg]
 #       set force of drag on the body by calculate_drag
 #       set net force on the body [to force of gravity plus force of drag]
 def calculate_forces(body):
