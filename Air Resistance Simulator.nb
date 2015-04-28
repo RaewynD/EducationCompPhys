@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     28030,        656]
-NotebookOptionsPosition[     27179,        621]
-NotebookOutlinePosition[     27535,        637]
-CellTagsIndexPosition[     27492,        634]
+NotebookDataLength[     28326,        660]
+NotebookOptionsPosition[     27472,        625]
+NotebookOutlinePosition[     27828,        641]
+CellTagsIndexPosition[     27785,        638]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -464,24 +464,27 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"{", 
       RowBox[{"tf", ",", ".1", ",", "\"\<time\>\""}], "}"}], ",", ".1", ",", 
-     "10"}], "}"}]}], "]"}]], "Input",
+     "10"}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", "tf", "}"}]}]}], "]"}]], "Input",
  CellChangeTimes->CompressedData["
-1:eJxTTMoPSmViYGAQB2IQ3S2x8PgFqdeOfmuYT4Douc/Ez4PoU0E6F0C06cXE
-eyCab2r7fRA9v9jD7CKQ3t/nD6a7g+LTQXQfs0g+iJ60hqcYRO9RXFEOop02
-FTwD0RWP94BpiZcJX0C0En8VmK66xslyCUjPe7yJDUR7aB7kAtGv1t/mAdFu
-W28IgOg1zJ6CILpI60bgNyB95cnpCBA9r3ftaxAdsifoJ4jWPMDC/B1kv8g8
-MO3DbcUJot+dcuUG0elXYqRA9AFOdSUQXXGQWRtERxx21gHRJ2qibUH0lFen
-Q0B0A2NPJIiezPO0AkQXy9tOAtEe741nguiT8jvng+jHNdWbQPQpo0fbQTQD
-a+UuEC1gYLsfRB/aPAVMAwAKh7uu
+1:eJwdzT1IAnEAhvGrs8CUMpAS+xBvCcuhjCIEI4vigtA6HIyCPiAcrRxSu6Gt
+wXIwGxpS2hoM4SIiEdQaMh3SkBCKgiwhpVqiaOve//DwGx/tspNbqaUoSi0G
+faqj65y6arZE6DQ8LLfewgynz8GB/NITbNzffoZhFzuYF034rUQft+CAflrp
+hIGI3AXj2uMNOCqslqG7FCeq3he/IdPkJXrvpZI70VBJqIesLtUAK9EHOZw4
+KypghJ5shuvdxZkf0cJr1g5DuydVaItzf1CXlNC/+CtDxCmZUQo/M+My6CjM
+q2FS2sVAd4rugfarMT1M83MmGKxkbXCrZmcW7snf3NClMQUg+9V/AG80F2FY
+4jcFmDG8nEOqzhODil5TAl6eBolM25q/s6Nq5q0x4rAj2q4RHel7JE63eIag
+5cNghP/qxs0F
   "]],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`b$$ = 0.3, $CellContext`g$$ = 
-    9.8, $CellContext`m$$ = 0.5, $CellContext`tf$$ = 4.02, $CellContext`v0$$ =
-     45., $CellContext`\[Theta]$$ = 1.09, Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    9.8, $CellContext`m$$ = 0.5, $CellContext`tf$$ = 7.05, $CellContext`v0$$ =
+     35, $CellContext`\[Theta]$$ = 1.0207185005736052`, Typeset`show$$ = True,
+     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`v0$$], 35, "initial speed"}, 0, 45}, {{
@@ -493,39 +496,39 @@ Cell[BoxData[
        Hold[$CellContext`tf$$], 0.1, "time"}, 0.1, 10}}, Typeset`size$$ = {
     951., {373.634033203125, 379.365966796875}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`v0$309252$$ = 0, $CellContext`b$309253$$ = 
-    0, $CellContext`m$309254$$ = 0, $CellContext`\[Theta]$309255$$ = 
-    0, $CellContext`g$309256$$ = 0, $CellContext`tf$309257$$ = 0}, 
+    True, $CellContext`v0$858780$$ = 0, $CellContext`b$858781$$ = 
+    0, $CellContext`m$858782$$ = 0, $CellContext`\[Theta]$858783$$ = 
+    0, $CellContext`g$858784$$ = 0, $CellContext`tf$858785$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`b$$ = 0.3, $CellContext`g$$ = 
         9.8, $CellContext`m$$ = 0.5, $CellContext`tf$$ = 
         0.1, $CellContext`v0$$ = 35, $CellContext`\[Theta]$$ = 1.09}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`v0$$, $CellContext`v0$309252$$, 0], 
-        Hold[$CellContext`b$$, $CellContext`b$309253$$, 0], 
-        Hold[$CellContext`m$$, $CellContext`m$309254$$, 0], 
-        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$309255$$, 0], 
-        Hold[$CellContext`g$$, $CellContext`g$309256$$, 0], 
-        Hold[$CellContext`tf$$, $CellContext`tf$309257$$, 0]}, 
+        Hold[$CellContext`v0$$, $CellContext`v0$858780$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$858781$$, 0], 
+        Hold[$CellContext`m$$, $CellContext`m$858782$$, 0], 
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$858783$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$858784$$, 0], 
+        Hold[$CellContext`tf$$, $CellContext`tf$858785$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, "Body" :> Grid[{{{
            
-           ParametricPlot[{{($CellContext`t $CellContext`v0$$) 
+           ParametricPlot[{{$CellContext`t $CellContext`v0$$ 
               Cos[$CellContext`\[Theta]$$], -($CellContext`g$$ \
-($CellContext`t^2/2)) + ($CellContext`t $CellContext`v0$$) 
-               Sin[$CellContext`\[Theta]$$]}, {($CellContext`t \
-$CellContext`v0$$) 
+$CellContext`t^2/2) + $CellContext`t $CellContext`v0$$ 
+               Sin[$CellContext`\[Theta]$$]}, {$CellContext`t \
+$CellContext`v0$$ 
               Cos[$CellContext`\[Theta]$$], $CellContext`m$$ \
-(($CellContext`g$$ $CellContext`m$$ - ($CellContext`b$$ $CellContext`g$$) \
-$CellContext`t + ($CellContext`b$$ $CellContext`v0$$) 
-                 Sin[$CellContext`\[Theta]$$] - 
-                E^(-($CellContext`b$$ ($CellContext`t/$CellContext`m$$))) \
-($CellContext`g$$ $CellContext`m$$ + ($CellContext`b$$ $CellContext`v0$$) 
-                  Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2)}}, \
+($CellContext`g$$ $CellContext`m$$ - $CellContext`b$$ $CellContext`g$$ \
+$CellContext`t + $CellContext`b$$ $CellContext`v0$$ 
+                Sin[$CellContext`\[Theta]$$] - 
+               E^(-($CellContext`b$$ $CellContext`t/$CellContext`m$$)) \
+($CellContext`g$$ $CellContext`m$$ + $CellContext`b$$ $CellContext`v0$$ 
+                 Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2}}, \
 {$CellContext`t, 0, $CellContext`tf$$}, 
             PlotStyle -> {{Thick, Blue}, {Thick, Red}}, AxesOrigin -> {0, 0}, 
             AxesLabel -> {"x(t) (meters)", "y(t) (meters)"}, 
@@ -534,28 +537,26 @@ $CellContext`t + ($CellContext`b$$ $CellContext`v0$$)
             "y(t) vs. x(t)", Epilog -> {Green, 
               PointSize[0.02], 
               
-              Point[{{($CellContext`tf$$ $CellContext`v0$$) 
+              Point[{{$CellContext`tf$$ $CellContext`v0$$ 
                  Cos[$CellContext`\[Theta]$$], -($CellContext`g$$ \
-($CellContext`tf$$^2/2)) + ($CellContext`tf$$ $CellContext`v0$$) 
-                  Sin[$CellContext`\[Theta]$$]}, {($CellContext`tf$$ \
-$CellContext`v0$$) 
+$CellContext`tf$$^2/2) + $CellContext`tf$$ $CellContext`v0$$ 
+                  Sin[$CellContext`\[Theta]$$]}, {$CellContext`tf$$ \
+$CellContext`v0$$ 
                  Cos[$CellContext`\[Theta]$$], $CellContext`m$$ \
-(($CellContext`g$$ $CellContext`m$$ - ($CellContext`b$$ $CellContext`g$$) \
-$CellContext`tf$$ + ($CellContext`b$$ $CellContext`v0$$) 
-                    Sin[$CellContext`\[Theta]$$] - 
-                   E^(-($CellContext`b$$ \
-($CellContext`tf$$/$CellContext`m$$))) ($CellContext`g$$ $CellContext`m$$ + \
-($CellContext`b$$ $CellContext`v0$$) 
-                    Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2)}}]}]}, \
+($CellContext`g$$ $CellContext`m$$ - $CellContext`b$$ $CellContext`g$$ \
+$CellContext`tf$$ + $CellContext`b$$ $CellContext`v0$$ 
+                   Sin[$CellContext`\[Theta]$$] - 
+                  E^(-($CellContext`b$$ $CellContext`tf$$/$CellContext`m$$)) \
+($CellContext`g$$ $CellContext`m$$ + $CellContext`b$$ $CellContext`v0$$ 
+                    Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$^2}}]}]}, \
 {$CellContext`tf$$ " seconds"}}, {{
            
            ParametricPlot[{{$CellContext`t, (-$CellContext`g$$) \
 $CellContext`t + $CellContext`v0$$ 
-               
                Sin[$CellContext`\[Theta]$$]}, {$CellContext`t, \
 ((-$CellContext`g$$) $CellContext`m$$ + 
-               E^(-($CellContext`b$$ ($CellContext`t/$CellContext`m$$))) \
-($CellContext`g$$ $CellContext`m$$ + ($CellContext`b$$ $CellContext`v0$$) 
+               E^(-($CellContext`b$$ $CellContext`t/$CellContext`m$$)) \
+($CellContext`g$$ $CellContext`m$$ + $CellContext`b$$ $CellContext`v0$$ 
                   Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$}}, \
 {$CellContext`t, 0, $CellContext`tf$$}, 
             PlotStyle -> {{Thick, Blue}, {Thick, Red}}, AxesOrigin -> {0, 0}, 
@@ -568,8 +569,8 @@ $CellContext`t + $CellContext`v0$$
            ParametricPlot[{{$CellContext`t, -$CellContext`g$$}, \
 {$CellContext`t, -$CellContext`g$$ - ($CellContext`b$$/$CellContext`m$$) \
 (((-$CellContext`g$$) $CellContext`m$$ + 
-                E^(-($CellContext`b$$ ($CellContext`t/$CellContext`m$$))) \
-($CellContext`g$$ $CellContext`m$$ + ($CellContext`b$$ $CellContext`v0$$) 
+                E^(-($CellContext`b$$ $CellContext`t/$CellContext`m$$)) \
+($CellContext`g$$ $CellContext`m$$ + $CellContext`b$$ $CellContext`v0$$ 
                    Sin[$CellContext`\[Theta]$$]))/$CellContext`b$$)}}, \
 {$CellContext`t, 0, $CellContext`tf$$}, 
             PlotStyle -> {{Thick, Blue}, {Thick, Red}}, AxesOrigin -> {0, 0}, 
@@ -585,7 +586,8 @@ $CellContext`t + $CellContext`v0$$
          0.5}, {{$CellContext`m$$, 0.5, "mass"}, 0.01, 
          2}, {{$CellContext`\[Theta]$$, 1.09, "angle"}, 0.1, Rational[1, 2] 
          Pi}, {{$CellContext`g$$, 9.8, "gravity"}, 5, 
-         20}, {{$CellContext`tf$$, 0.1, "time"}, 0.1, 10}}, "Options" :> {}, 
+         20}, {{$CellContext`tf$$, 0.1, "time"}, 0.1, 10}}, 
+      "Options" :> {TrackedSymbols :> {$CellContext`tf$$}}, 
       "DefaultOptions" :> {}],
      ImageSizeCache->{996., {489., 494.}},
      SingleEvaluation->True],
@@ -599,8 +601,9 @@ $CellContext`t + $CellContext`v0$$
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{{3.6380173041397123`*^9, 3.638017428708156*^9}, 
-   3.638017492364032*^9, 3.638017534923826*^9}]
-}, {2}]]
+   3.638017492364032*^9, 3.638017534923826*^9, 3.6387909097330227`*^9, 
+   3.63886928113135*^9, 3.639145285097941*^9, 3.6391469627253237`*^9}]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -610,17 +613,18 @@ Cell["Experimenting with air resistance", "Section",
 
 Cell["\<\
 So how well do our simulations of motion with air resistance reflect what \
-happens in the real world? In this section, you will look at a ball with and \
-without air resistance and decide how well the simulation captures the \
-behavior you observe.\
+happens in the real world? In this section, you will explore the motion of a \
+dropped ball with and without air resistance and decide how well the \
+simulation captures the behavior you observe.\
 \>", "Text",
  CellChangeTimes->{{3.638269065377967*^9, 3.638269145590884*^9}, {
-  3.638269202354343*^9, 3.6382692269797277`*^9}}]
+  3.638269202354343*^9, 3.6382692269797277`*^9}, {3.6388693080225477`*^9, 
+  3.638869319744156*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1280, 751},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{2, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
 2014)",
 StyleDefinitions->"Default.nb"
@@ -649,13 +653,13 @@ Cell[CellGroupData[{
 Cell[6204, 144, 113, 2, 50, "Section"],
 Cell[6320, 148, 130, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[6475, 155, 13141, 320, 857, "Input"],
-Cell[19619, 477, 6976, 124, 1000, "Output"]
-}, {2}]]
+Cell[6475, 155, 13272, 323, 857, "Input"],
+Cell[19750, 480, 7062, 124, 1000, "Output"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26641, 607, 117, 1, 64, "Section"],
-Cell[26761, 610, 390, 7, 49, "Text"]
+Cell[26861, 610, 117, 1, 64, "Section"],
+Cell[26981, 613, 463, 8, 49, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
