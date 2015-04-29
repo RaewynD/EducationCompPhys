@@ -64,7 +64,8 @@ def initialize(name):
     return body    
 
 # Why can you choose some initialization values for variables
-# while others should be set to specific values, such as acceleration?
+#      while others should be set to specific values, such as acceleration?
+# What if we set the b values for both balls equal but made them different sizes?
 
 
 # function: calculate_drag
@@ -154,7 +155,7 @@ def collision_check(body, ground):
 
 # Is there another way to determine where to shift the ball to avoid trapping?
 # Why does the ball only keep a percentage of its velocity when it collides?
-# Do you know how the resitance coefficient is actually derived? If so, how
+# Do you know how the resistance coefficient is actually derived? If so, how
 #       would computation help in this derivation?
 
 
