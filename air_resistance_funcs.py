@@ -40,6 +40,7 @@ drag_2 = 0          # other ball always zero drag for comparison
 
 # FUNCTION DEFINITIONS ##################
 
+
 # function: initialize
 # input: name
 # output: 3D object (body)
@@ -65,6 +66,7 @@ def initialize(name):
 # Why can you choose some initialization values for variables
 # while others should be set to specific values, such as acceleration?
 
+
 # function: calculate_drag
 # input: b - drag of ball
 #        p - density of air
@@ -88,6 +90,7 @@ def calculate_drag(b, p, v, r):
 # Do you know how the drag coefficient is actually derived? If so, how would
 #       computation help in this derivation?
 
+
 # function: calculate_forces
 # input: body
 # output: body
@@ -103,6 +106,7 @@ def calculate_forces(body):
 
 # Are there any other natural forces that may act on the ball?
 # How might you account for them?
+
 
 # function: update_kinematics
 # input: body
@@ -124,6 +128,7 @@ def update_kinematics(body, delta_t):
 # Does the order matter or could we do it position, velocity, then
 #       acceleration, or even position, acceleration, and then velocity?
 # What would be different in the simulation if the order was changed?
+
 
 # function: collision_check
 # input: body
@@ -151,5 +156,6 @@ def collision_check(body, ground):
 # Why does the ball only keep a percentage of its velocity when it collides?
 # Do you know how the resitance coefficient is actually derived? If so, how
 #       would computation help in this derivation?
+
 
 #########################################

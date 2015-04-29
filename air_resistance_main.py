@@ -19,11 +19,7 @@
 # INCLUDE THE CODE YOU WILL WRITE #######
 
 #import air_resistance_solution
-from air_resistance_solution import initialize
-from air_resistance_solution import calculate_drag
-from air_resistance_solution import calculate_forces
-from air_resistance_solution import update_kinematics
-from air_resistance_solution import collision_check
+from air_resistance_solution import *
 from visual import *                # include standard visual python
 from visual.graph import *          # include graphing features
 
