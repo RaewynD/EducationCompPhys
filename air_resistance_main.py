@@ -18,8 +18,11 @@
 
 # INCLUDE THE CODE YOU WILL WRITE #######
 
-#import air_resistance_solution
-from air_resistance_solution import *
+
+# One of these lines must be commented out with '#'
+#from air_resistance_funs import *            # your functions     
+from air_resistance_solution import *         # a sample solution
+
 from visual import *                # include standard visual python
 from visual.graph import *          # include graphing features
 
